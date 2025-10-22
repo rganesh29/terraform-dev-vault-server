@@ -25,7 +25,7 @@ resource "aws_instance" "demo" {
     inline = [
       "chmod 470 vault-install.sh",
       "sudo sh vault-install.sh",
-      "sudo chmod 470 vault.log"]
+      "sudo chmod 455 vault.log"]
   }
 
   depends_on = [ aws_vpc.demo, aws_subnet.demo ]
