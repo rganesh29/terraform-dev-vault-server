@@ -60,7 +60,11 @@ variable "instance-ami_id" {
 
 variable "instance-type" {
   description = "type of the instance"
-  default = "t2.micro"
+  type = map(string)
+  default = {
+    "dev" = "t2.micro"
+    "prod" = "t2.medium"
+  }
 }
 variable "instance-name" {
   description = "name of the instance"

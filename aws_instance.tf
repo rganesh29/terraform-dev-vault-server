@@ -1,6 +1,6 @@
 resource "aws_instance" "demo" {
   ami = var.instance-ami_id
-  instance_type = var.instance-type
+  instance_type = lookup(var.instance-type, terraform.workspace, "t2.medium")
   key_name = var.instance-key_name
   subnet_id = aws_subnet.demo.id
   vpc_security_group_ids = [aws_security_group.demo.id]
